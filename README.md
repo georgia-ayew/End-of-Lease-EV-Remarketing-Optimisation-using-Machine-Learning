@@ -13,16 +13,45 @@ The final model was built on autotrader listing prices between 2017-2023 in the 
 
 ## Key Takeaways 
 
-We were able to predict price within a 90% accuracy. In doing so we then analysed the discrepancies to find which features caused under/over valuations leading to insights on how to optimise vehicle resale.
+Vehicle value is driven primarily by vehicle condition, age, regulatory standard, and usage intensity, rather than brand or cosmetic characteristics. 
 
-- Vehicles grouped by Emission Class, Age Band, and Engine size reveal patterns:
+The model confirms that structural factors reflecting longevity, efficiency, and regulatory compliance are the most reliable predictors of retained value.
 
-- Euro 6, low mileage, family cars → consistently undervalued → pricing opportunity
+These insights can be used to:
 
-- Older, smaller engines → often overvalued → adjust acquisition/pricing strategy
+- Improve vehicle valuation accuracy
 
+- Inform residual value forecasting
 
-=========================
+- Support pricing strategy and inventory decisions
+
+- Identify high-value vehicle segments
+
+# In Depth Insights
+
+## Key Drivers of Vehicle Value
+
+A machine learning model was developed to identify the primary factors influencing vehicle value. Using SHAP (Shapley Additive Explanations), we quantified the relative importance and directional impact of each feature on predicted vehicle prices.
+
+**Primary Value Drivers**
+
+The analysis shows that vehicle value is predominantly influenced by emissions standard, mileage, vehicle age, and engine characteristics.
+
+Features that most strongly increase vehicle value
+Newer emissions standards (particularly Euro 5 and Euro 6) are associated with higher vehicle values, reflecting regulatory desirability and improved environmental performance.
+
+Lower mileage vehicles consistently command higher values, indicating wear and usage remain major determinants of resale price.
+Newer vehicles (lower Premium_Age) significantly increase value, reflecting depreciation over time.
+
+Medium engine sizes (1.4–2.0L) tend to positively influence value, likely reflecting an optimal balance between performance and efficiency.
+
+**Features that most strongly decrease vehicle value**
+
+Higher mileage, especially when accumulated rapidly (high Mileage_Delta or Mileage_per_Year), substantially reduces value.
+Older vehicles show consistent depreciation effects.
+
+Higher ownership turnover (more previous owners or higher Owners_per_Year) slightly reduces value, reflecting perceived risk and wear.
+
 
 ## Business Problem 
 
@@ -38,7 +67,7 @@ Using supervised Random Forest Regression algorithms are we able to establish ac
 
 We will do a preliminary logistic regression to observe feature importance and effectiveness of our feature selection before using a pipeine to evaluate multiple random forest regression algorithms and select our most accurate model. Our learning will involve preparing our data for modelling, this being done through preprocessing, feature engineering and feature selection. This will be an iterative process based on evaluation metrics assessing how effectively our model is separating on the features we utilise.
 
-=========================
+
 
 ## The Data 
 
@@ -137,6 +166,12 @@ A-class, ASX, Accent, Accord, Adam, Agila, Almera, Almera Tino, Alpina, Alto, Am
 - Door_Category_Family 
 - Door_Category_Sedan
 - Door_Category_Small
+
+# Methodology 
+
+**Notes on Methodology**
+
+
 
 
 
