@@ -5,6 +5,56 @@ Built a predictive model to estimate UK vehicle resale value and optimise end-of
 
 # Executive Summary
 
+From findings in our Random Forest Regression we were able to accuartely predict the listing value of cars being remarketed through autotrader. 
+
+This allows us to give indepth statistically retrieved insights to remarketing companies on resale value. It also allowed us to gain insight on which features cause under or over valuations - this will allow companies to understand where value is lost in resale and where cars are overpriced to reduce stock hold and loss of revenue.
+
+The final model was built on autotrader listing prices between 2017-2023 in the UK. This is a broad approach that can be tailored to the remarketing companies stock and previous sales data to create a unique soloution.
+
+=========================
+
+## Segment-Level Learnings
+
+![alt text](image-1.png)
+
+- Vehicles grouped by Emission Class, Age Band, and Engine size reveal patterns:
+
+- Euro 6, low mileage, family cars → consistently undervalued → pricing opportunity
+
+- Older, smaller engines → often overvalued → adjust acquisition/pricing strategy
+
+- Using binned engine categories improves clarity of segment-level insights.
+
+=========================
+
+## Recommendations
+
+**Pricing Strategy:**
+
+- Increase prices on undervalued segments by £500–£1,500 depending on residual magnitude.
+
+- Reduce prices on overvalued segments to accelerate sales and reduce holding costs.
+
+**Inventory Planning:**
+
+- Prioritise acquisition of vehicles that historically outperform predictions (low mileage, family-friendly, Euro 6).
+
+- Avoid over-investing in segments that tend to underperform.
+
+**Marketing:**
+
+- Promote undervalued vehicles prominently to maximize ROI.
+
+- Highlight key features undervalued by the model (engine size, Euro class, mileage).
+
+**Model Monitoring & Refinement:**
+
+- Re-train periodically with new sales data.
+
+- Consider segment-specific models for rare/premium vehicles to reduce extreme residuals.
+
+=========================
+
 ## Model Performance
 
 **Model Used:** 
@@ -20,6 +70,8 @@ Built a predictive model to estimate UK vehicle resale value and optimise end-of
 - **R²**: 0.9 (90% of price variability explained)
 - **RMSE**: £1,427 avergae deviation from predicted price 
 - **MAE**: £846 average error per vehicle
+
+=========================
 
 ## Key Insights from Residuals
 
@@ -61,9 +113,17 @@ Built a predictive model to estimate UK vehicle resale value and optimise end-of
 
 - Action: Avoid overpricing these vehicles; consider promotions or faster turnover.
 
-## Segment-Level Learnings
+=========================
 
-![alt text](image-1.png)
+## Business Problem 
+
+Are we able to accurately predict listing prices of used cars in order for remarketing businesses to optimise pricing and tailor fleets to hold vehicles that fit their life span cycle whilst retaining highest value.
+
+## Data Science Problem
+
+Using supervised Random Forest Regression algorithms are we able to establish accurate price evaluations made up of core features of the vehicle and gain actionable insight into what contributes to value in used vehicles.
+
+## Key Takeaways 
 
 - Vehicles grouped by Emission Class, Age Band, and Engine size reveal patterns:
 
@@ -72,29 +132,3 @@ Built a predictive model to estimate UK vehicle resale value and optimise end-of
 - Older, smaller engines → often overvalued → adjust acquisition/pricing strategy
 
 - Using binned engine categories improves clarity of segment-level insights.
-
-## Recommendations
-
-**Pricing Strategy:**
-
-- Increase prices on undervalued segments by £500–£1,500 depending on residual magnitude.
-
-- Reduce prices on overvalued segments to accelerate sales and reduce holding costs.
-
-**Inventory Planning:**
-
-- Prioritize acquisition of vehicles that historically outperform predictions (low mileage, family-friendly, Euro 6).
-
-- Avoid over-investing in segments that tend to underperform.
-
-**Marketing:**
-
-- Promote undervalued vehicles prominently to maximize ROI.
-
-- Highlight key features undervalued by the model (engine size, Euro class, mileage).
-
-**Model Monitoring & Refinement:**
-
-- Re-train periodically with new sales data.
-
-- Consider segment-specific models for rare/premium vehicles to reduce extreme residuals.
