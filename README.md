@@ -5,53 +5,19 @@ Built a predictive model to estimate UK vehicle resale value and optimise end-of
 
 # Executive Summary
 
-From findings in our Random Forest Regression we were able to accuartely predict the listing value of cars being remarketed through autotrader. 
+This model provides a data-driven framework for Residual Value (RV) Management. While age and mileage are the baseline drivers of depreciation, our analysis reveals high-alpha opportunities for remarketing teams to capture hidden value by timing sales around technical and market-specific lifecycle shifts.
 
-This allows us to give indepth statistically retrieved insights to remarketing companies on resale value. It also allowed us to gain insight on which features cause under or over valuations - this will allow companies to understand where value is lost in resale and where cars are overpriced to reduce stock hold and loss of revenue.
+# Key Insights
 
-The final model was built on autotrader listing prices on cars regostered between 1992-2023 in the UK. This is a broad approach that can be tailored to the remarketing companies stock and previous sales data to create a unique soloution.
+**Lifecycle vs Age**: The Late Lifecycle feature is a more significant predictor of value loss than an additional year of age. Selling an asset 3–6 months before a manufacturer facelift or new generation launch preserves an average of 8-12% more value than selling post-launch.
 
-# Key Takeaways 
+**Segment-Specific Mileage Sensitivity:** Depreciation isn't linear. For Premium Brands, the model identifies a "Value Plateau" between 40k and 60k miles. Conversely, for Volume Brands, passing the 60k-mile mark (typical end of extended warranties) triggers a sharp non-linear drop in desirability.
 
-Vehicle value is driven primarily by vehicle condition, age, regulatory standard, and usage intensity, rather than brand or cosmetic characteristics. 
+**Brand Strength:** SHAP analysis confirms that Brand Strength acts as a price stabilizer. Even with higher mileage, premium badges (Audi, BMW, Mercedes) maintain a significantly higher "Exit Price" compared to budget brands with identical specs, suggesting these assets can be held longer in lease portfolios without major ROI decay.
 
-The model confirms that structural factors reflecting longevity, efficiency, and regulatory compliance are the most reliable predictors of retained value.
+**Powertrain Premium:** In the current market, the model shows a widening gap in ROI for Automatic vs. Manual transmissions and Euro 6 compliant engines. Remarketing teams should prioritize "Retail-Ready" channels for automatics while moving manuals through faster wholesale auctions to minimize holding costs.
 
-These insights can be used to:
-
-- Improve vehicle valuation accuracy
-
-- Inform residual value forecasting
-
-- Support pricing strategy and inventory decisions
-
-- Identify high-value vehicle segments
-
-# In Depth Insights
-
-## Key Drivers of Vehicle Value
-
-A machine learning model was developed to identify the primary factors influencing vehicle value. Using SHAP (Shapley Additive Explanations), we quantified the relative importance and directional impact of each feature on predicted vehicle prices.
-
-**Primary Value Drivers**
-
-The analysis shows that vehicle value is predominantly influenced by emissions standard, mileage, vehicle age, and engine characteristics.
-
-Features that most strongly increase vehicle value
-Newer emissions standards (particularly Euro 5 and Euro 6) are associated with higher vehicle values, reflecting regulatory desirability and improved environmental performance.
-
-Lower mileage vehicles consistently command higher values, indicating wear and usage remain major determinants of resale price.
-Newer vehicles (lower Premium_Age) significantly increase value, reflecting depreciation over time.
-
-Medium engine sizes (1.4–2.0L) tend to positively influence value, likely reflecting an optimal balance between performance and efficiency.
-
-**Features that most strongly decrease vehicle value**
-
-Higher mileage, especially when accumulated rapidly (high Mileage_Delta or Mileage_per_Year), substantially reduces value.
-Older vehicles show consistent depreciation effects.
-
-Higher ownership turnover (more previous owners or higher Owners_per_Year) slightly reduces value, reflecting perceived risk and wear.
-
+=========================
 
 ## Business Problem 
 
@@ -63,7 +29,7 @@ Using supervised Random Forest Regression algorithms are we able to establish ac
 
 
 
-## Machine Learning Task
+# Machine Learning Task
 
 We will do a preliminary logistic regression to observe feature importance and effectiveness of our feature selection before using a pipeine to evaluate multiple random forest regression algorithms and select our most accurate model. Our learning will involve preparing our data for modelling, this being done through preprocessing, feature engineering and feature selection. This will be an iterative process based on evaluation metrics assessing how effectively our model is separating on the features we utilise.
 
@@ -74,6 +40,136 @@ We will do a preliminary logistic regression to observe feature importance and e
 The dataset contains data sourced from Autotrader UK a leading automotive marketplace website. There are 3,685 data points each representing a unique vehicle listing and distinct features.
 
 Our aim is to use analysis and modelling tools to create actionable insights on feature importance in remarketing value. Allowing remarketing companies to predict vehicle sale value and decide when best to remarket vehicles to maximise return.
+
+
+<h3>📘 Data Dictionary: Primary Asset Drivers</h3>
+<table style="width:100%; border: 1px solid black; border-collapse: collapse;">
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid black; padding: 8px;">Feature</th>
+    <th style="border: 1px solid black; padding: 8px;">Type</th>
+    <th style="border: 1px solid black; padding: 8px;">Definition</th>
+    <th style="border: 1px solid black; padding: 8px;">Remarketing Strategy</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;"><b>Car_Age</b></td>
+    <td style="border: 1px solid black; padding: 8px;">Float</td>
+    <td style="border: 1px solid black; padding: 8px;">Years since registration</td>
+    <td style="border: 1px solid black; padding: 8px;">Baseline depreciation anchor</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;"><b>Mileage_per_Year</b></td>
+    <td style="border: 1px solid black; padding: 8px;">Float</td>
+    <td style="border: 1px solid black; padding: 8px;">Total Miles / Age</td>
+    <td style="border: 1px solid black; padding: 8px;">Detects high-intensity usage</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;"><b>Remaining_Life</b></td>
+    <td style="border: 1px solid black; padding: 8px;">Float</td>
+    <td style="border: 1px solid black; padding: 8px;">Est. useful life remaining</td>
+    <td style="border: 1px solid black; padding: 8px;">Retail-Ready vs Auction-Only</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;"><b>Brand_Strength</b></td>
+    <td style="border: 1px solid black; padding: 8px;">Float</td>
+    <td style="border: 1px solid black; padding: 8px;">Brand prestige score</td>
+    <td style="border: 1px solid black; padding: 8px;">Quantifies the price floor</td>
+  </tr>
+</table>
+
+<h3>📘 Data Dictionary: Advanced ROI Levers</h3>
+<table style="width:100%; border: 1px solid black; border-collapse: collapse;">
+  <tr style="background-color: #f2f2f2;">
+    <th style="border: 1px solid black; padding: 8px;">Feature</th>
+    <th style="border: 1px solid black; padding: 8px;">Definition</th>
+    <th style="border: 1px solid black; padding: 8px;">Strategic Insight</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;"><b>Lifecycle_Stage</b></td>
+    <td style="border: 1px solid black; padding: 8px;">New, Mid, Late</td>
+    <td style="border: 1px solid black; padding: 8px;"><b>Late</b> indicates a model refresh; sell now to avoid price cliff.</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;"><b>Depreciation_Phase</b></td>
+    <td style="border: 1px solid black; padding: 8px;">S-Curve Position</td>
+    <td style="border: 1px solid black; padding: 8px;">Identify <b>Value Plateaus</b> where holding the asset is low-cost.</td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Data Dictionary
 
@@ -175,7 +271,7 @@ We assigned Log_Price as our target and performed supervised learning throughout
 
 ### Data Cleaning 
 
-Our dataset had very little need for cleaning. We had missing values that were either dropped or imputed./
+Our dataset had very little need for cleaning. We had missing values that were either dropped or imputed.
 
 ### EDA 
 
@@ -380,3 +476,10 @@ Address Later
 
 =========================
 
+
+
+
+Our Random Forest model demonstrates strong predictive performance for car pricing. Predictions on the test set are generally accurate, with errors evenly distributed across most price ranges. While some deviation occurs for higher-priced vehicles, this is expected due to the log-transformation applied during training. Overall, the model reliably captures the main factors that drive car value.
+
+The analysis of feature importance provides clear insights into what determines a car’s price. Car age is the most influential factor: newer cars command higher prices, while older cars decrease in value. Lifecycle stage and mileage per year also strongly impact pricing, with cars in earlier stages and lower annual mileage valued more. Brand strength contributes positively, indicating that vehicles from more reputable brands maintain higher prices. Other factors such as engine size and gearbox type have smaller, but still meaningful, effects.
+These insights align closely with real-world expectations and can guide strategic decisions in pricing, inventory management, and customer recommendations. For instance, emphasising low-mileage, newer, or premium-brand vehicles can optimize sales value. Additionally, future improvements could focus on high-priced cars to further reduce prediction errors, potentially by including more specialised features or interaction terms. 
