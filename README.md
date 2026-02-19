@@ -71,7 +71,7 @@ This allows Fleet Managers to better understand whether assets are stable or req
 
 ## Business Problem 
 
-Are we able to accurately predict listing prices of used cars in order for remarketing businesses to optimise pricing and tailor fleets to hold vehicles that fit their life span cycle whilst retaining highest value.
+Are we able to accurately predict listing prices of used cars in order for remarketing businesses, with the aim of optimising pricing and tailoring fleets to hold vehicles that fit their life span cycle, whilst retaining highest value?
 
 ## Data Science Problem
 
