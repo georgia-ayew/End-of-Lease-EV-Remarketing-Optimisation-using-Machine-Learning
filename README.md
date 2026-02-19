@@ -14,7 +14,7 @@ The model identifies Lifecycle_Stage_Late as a high-risk indicator for rapid dep
 
 **Strategic Recommendation:** Implement an Early Exit Program. Monitor assets flagged as Late Lifecycle and offer customers incentives to upgrade 3–6 months before the new model launch.
 
-**ROI Optimisation:** Capturing the "Current Model" premium before the market is flooded with previous-gen stock can preserve 8-12% of an asset's residual value compared to waiting for contract maturity.
+**ROI Optimisation:** Capturing the Current Model premium before the market is flooded with previous-gen stock can preserve 8-12% of an asset's residual value compared to waiting for contract maturity.
 
 ## Segment-Specific Mileage Arbitrage
 
@@ -26,7 +26,7 @@ Depreciation is non-linear. Using Mileage_per_Year, the model identifies "Value 
 
 ## Regional and Regulatory Reallocation
 
-With Emission Class_Euro 6 and Fuel type acting as primary price drivers, geography becomes a lever for profit. Regulatory shifts like ULEZ create artificial "highs" and "lows" in market value.
+With Emission Class_Euro 6 and Fuel type acting as primary price drivers, geography becomes a lever for profit. Regulatory shifts like ULEZ create artificial highs and "lows" in market value.
 
 **Strategic Recommendation:** Execute Geographic Arbitrage. Use the model to identify assets that are "High Risk" in urban zones (Euro 5 or below) and move them to rural auction hubs.
 
@@ -42,7 +42,7 @@ SHAP analysis reveals that features like Gearbox_Manual or certain Body types (e
 
 - Low-Spec/Manual/Hatchback: Direct to B2B (Wholesale) auctions to minimize holding costs.
 
-**ROI Optimisation:** By identifying "Liquidity Traps" early, you avoid the high holding costs of cars that sit on retail lots for 60+ days, ensuring capital is recycled back into higher-performing assets.
+**ROI Optimisation:** By identifying Liquidity Traps early, you avoid the high holding costs of cars that sit on retail lots for 60+ days, ensuring capital is recycled back into higher-performing assets.
 
 ## Remarketing Risk Score Formula 
 
@@ -50,7 +50,7 @@ SHAP analysis reveals that features like Gearbox_Manual or certain Body types (e
 
 This allows fleet managers to better understand wether assets are stable or require remarketing to prevent profit loss on a scale of 1-10.
 
-**8-10 Critical Exit:** Sell within 14 days. Asset is likely in "Late Lifecycle" and losing value rapidly. Use wholesale auctions for speed.
+**8-10 Critical Exit:** Sell within 14 days. Asset is likely in Late Lifecycle and losing value rapidly. Use wholesale auctions for speed.
 
 **5-7 Retail Target:** Active Marketing. High-demand specs (e.g., SUVs) that are entering Mid-Lifecycle. Use B2C channels to capture retail margin.
 
