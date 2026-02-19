@@ -20,9 +20,9 @@ The model identifies Lifecycle_Stage_Late as a high-risk indicator for rapid dep
 
 Depreciation is non-linear. Using Mileage_per_Year, the model identifies Value Plateaus — mileage brackets where the price remains stable despite continued use.
 
-**Strategic Recommendation:** Deploy Extension Tactics for under-utilized assets. If the model identifies a plateau (e.g., between 40k and 60k miles for premium brands), these vehicles are prime candidates for lease extensions.
+**Strategic Recommendation:** Deploy Extension Tactics for under-utilised assets. If the model identifies a plateau (e.g., between 40k and 60k miles for premium brands), these vehicles are prime candidates for lease extensions.
 
-**ROI Optimisation:** By keeping a vehicle in service during a plateau, you maximize rental income with negligible impact on the final disposal price, significantly increasing the total lifetime ROI of the asset.
+**ROI Optimisation:** By keeping a vehicle in service during a plateau, you maximise rental income with negligible impact on the final disposal price, significantly increasing the total lifetime ROI of the asset.
 
 ## Regional and Regulatory Reallocation
 
@@ -40,7 +40,7 @@ SHAP analysis reveals that features like Gearbox_Manual or certain Body types (e
 
 - High-Spec/Auto/SUV: Direct to B2C (Retail) platforms to capture maximum margin.
 
-- Low-Spec/Manual/Hatchback: Direct to B2B (Wholesale) auctions to minimize holding costs.
+- Low-Spec/Manual/Hatchback: Direct to B2B (Wholesale) auctions to minimise holding costs.
 
 **ROI Optimisation:** By identifying Liquidity Traps early, you avoid the high holding costs of cars that sit on retail lots for 60+ days, ensuring capital is recycled back into higher-performing assets.
 
@@ -54,7 +54,7 @@ This allows fleet managers to better understand wether assets are stable or requ
 
 **5-7 Retail Target:** Active Marketing. High-demand specs (e.g., SUVs) that are entering Mid-Lifecycle. Use B2C channels to capture retail margin.
 
-**3-4 Hold/Extend:** Maximize Utility. Asset is in a Value Plateau. Can be kept in service or leased longer with minimal ROI impact.
+**3-4 Hold/Extend:** Maximise Utility. Asset is in a Value Plateau. Can be kept in service or leased longer with minimal ROI impact.
 
 **1-2 Prime Stock:** Premium Hold. Likely a new-model Hybrid/SUV with high brand strength. These are "Safe Havens" for capital.
 
