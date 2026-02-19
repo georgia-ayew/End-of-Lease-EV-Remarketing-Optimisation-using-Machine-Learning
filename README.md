@@ -60,7 +60,7 @@ This allows Fleet Managers to better understand whether assets are stable or req
 
 ## How to Calculate 
 
-**Lifecycle (40%):** If Lifecycle_Stage_Late = 1, assign 10 pts. If Mid = 5, if New = 1.
+**Lifecycle (40%):** If Lifecycle_Stage_Late = 1, assign 10 pts. If Mid, assign 5 point, if New, assign 1 point.
 
 **Depreciation Phase (30%):** Scaled value of your Depreciation_Phase feature. Higher values = steeper loss curves.
 
