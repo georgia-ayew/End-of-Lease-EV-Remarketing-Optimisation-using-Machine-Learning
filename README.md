@@ -176,14 +176,24 @@ We used a pipeline to transform test data and explored parameters. Our testing c
 Fitting 5 folds for each of 50 candidates, totalling 250 fits
 
 **Best params:** 
-**'regressor__n_estimators':** 800, **regressor__min_samples_split:** 2, 
+**'regressor__n_estimators':** 800
+
+**regressor__min_samples_split:** 2
+
 **regressor__min_samples_leaf:** 1 
-**regressor__max_features': 0.7,** 
-**regressor__max_depth:** 20}
+
+**regressor__max_features:** 0.7 
+
+**regressor__max_depth:** 20
+
 **Train R²:** 0.9853116675342399
+
 **Test R²:** 0.8739340341865218
+
 **RMSE (£):** 1340.0137857252557
+
 **MAE (£):** 770.2602978678395
+
 **R²:** 0.9156614907016334
 
 
