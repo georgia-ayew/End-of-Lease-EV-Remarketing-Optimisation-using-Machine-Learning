@@ -75,7 +75,7 @@ Are we able to accurately predict listing prices of used cars, in order for leas
 
 ## Data Science Problem
 
-Using supervised Random Forest Regression algorithms are we able to establish accurate price evaluations made up of core features of the vehicle and gain actionable insight into what contributes to value in used vehicles.
+Using supervised Random Forest Regression algorithms, are we able to establish accurate price evaluations comprised of core features of the vehicle, and gain actionable insight into what contributes to value in used vehicles?
 
 
 
