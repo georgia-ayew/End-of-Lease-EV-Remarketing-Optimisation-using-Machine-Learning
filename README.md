@@ -30,7 +30,7 @@ With Emission Class_Euro 6 and Fuel type acting as primary price drivers, geogra
 
 **Strategic Recommendation:** Execute Geographic Arbitrage. Use the model to identify assets that are High Risk in urban zones (Euro 5 or below) and move them to rural auction hubs.
 
-**ROI Optimisation:** Reallocating Euro 6 and Hybrid stock to urban retail-ready channels captures a "Compliance Premium," while moving older stock to less regulated areas ensures faster stock-turn and prevents aged-inventory write-downs.
+**ROI Optimisation:** Reallocating Euro 6 and Hybrid stock to urban retail-ready channels captures a Compliance Premium, while moving older stock to less regulated areas ensures faster stock-turn and prevents aged-inventory write-downs.
 
 ## Spec-Driven Channel Selection
 
