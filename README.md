@@ -8,11 +8,11 @@ This model provides a data-driven framework for Residual Value (RV) Management. 
 
 # Actionable Insights 
 
-## Lifecycle Timing: Avoiding the "Generation Cliff"
+## Lifecycle Timing
 
 The model identifies Lifecycle_Stage_Late as a high-risk indicator for rapid depreciation. When a manufacturer releases a new facelift or generation, the previous model's desirability drops instantly.
 
-**Strategic Recommendation:** Implement an Early Exit Program. Monitor assets flagged as "Late Lifecycle" and offer customers incentives to upgrade 3–6 months before the new model launch.
+**Strategic Recommendation:** Implement an Early Exit Program. Monitor assets flagged as Late Lifecycle and offer customers incentives to upgrade 3–6 months before the new model launch.
 
 **ROI Optimisation:** Capturing the "Current Model" premium before the market is flooded with previous-gen stock can preserve 8-12% of an asset's residual value compared to waiting for contract maturity.
 
@@ -46,7 +46,7 @@ SHAP analysis reveals that features like Gearbox_Manual or certain Body types (e
 
 ## Remarketing Risk Score Formula 
 
-RiskScore=0.4(Lifecycle)+0.3(DepreciationPhase)+0.2(LiquidityFactor)+0.1(UsageBias)
+**RiskScore=0.4(Lifecycle)+0.3(DepreciationPhase)+0.2(LiquidityFactor)+0.1(UsageBias)**
 
 This allows fleet managers to better understand wether assets are stable or require remarketing to prevent profit loss on a scale of 1-10.
 
