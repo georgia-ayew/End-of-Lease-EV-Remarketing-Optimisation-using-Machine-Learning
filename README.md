@@ -1,5 +1,4 @@
 # End-of-Lease-EV-Remarketing-Optimisation-using-Machine-Learning
-=========================
 
 Built a predictive model to estimate UK vehicle resale value and optimise end-of-lease disposal decisions using vehicle age, mileage, and specification data.
 
@@ -17,7 +16,6 @@ This model provides a data-driven framework for Residual Value (RV) Management. 
 
 **Powertrain Premium:** In the current market, the model shows a widening gap in ROI for Automatic vs. Manual transmissions and Euro 6 compliant engines. Remarketing teams should prioritize "Retail-Ready" channels for automatics while moving manuals through faster wholesale auctions to minimize holding costs.
 
-=========================
 
 ## Business Problem 
 
@@ -29,20 +27,21 @@ Using supervised Random Forest Regression algorithms are we able to establish ac
 
 
 
-# Machine Learning Task
+## Machine Learning Task
 
 We will do a preliminary logistic regression to observe feature importance and effectiveness of our feature selection before using a pipeine to evaluate multiple random forest regression algorithms and select our most accurate model. Our learning will involve preparing our data for modelling, this being done through preprocessing, feature engineering and feature selection. This will be an iterative process based on evaluation metrics assessing how effectively our model is separating on the features we utilise.
 
 
 
-## The Data 
+# The Data 
 
 The dataset contains data sourced from Autotrader UK a leading automotive marketplace website. There are 3,685 data points each representing a unique vehicle listing and distinct features.
 
 Our aim is to use analysis and modelling tools to create actionable insights on feature importance in remarketing value. Allowing remarketing companies to predict vehicle sale value and decide when best to remarket vehicles to maximise return.
 
+## Data Dictionary
 
-<h3>📘 Data Dictionary: Primary Asset Drivers</h3>
+<h3>Primary Asset Drivers</h3>
 <table style="width:100%; border: 1px solid black; border-collapse: collapse;">
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid black; padding: 8px;">Feature</th>
@@ -76,7 +75,7 @@ Our aim is to use analysis and modelling tools to create actionable insights on 
   </tr>
 </table>
 
-<h3>📘 Data Dictionary: Advanced ROI Levers</h3>
+<h3>Advanced ROI Levers</h3>
 <table style="width:100%; border: 1px solid black; border-collapse: collapse;">
   <tr style="background-color: #f2f2f2;">
     <th style="border: 1px solid black; padding: 8px;">Feature</th>
@@ -94,174 +93,6 @@ Our aim is to use analysis and modelling tools to create actionable insights on 
     <td style="border: 1px solid black; padding: 8px;">Identify <b>Value Plateaus</b> where holding the asset is low-cost.</td>
   </tr>
 </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Data Dictionary
-
-- `Title`: Vehicle Model Name  
-
-- `Price`: OTR price of the Vehicle Listed 
-
-- `Mileage(miles)`: Vehicle's recorded mileage since ownership 
-
-- `Registration_Year`: Year of vehicle production
-
-- `Previous Owners`: Number of owners the vehicle has had by time of sale price being logged 
-
-- `Fuel Type`: Vehicle fuel type indicatice also of powertrain 
-
-- `Body type`: Body type of vehicle listed 
-
-- `Engine`: Size of vehicle engine 
-
-- `Gearbox`: Vehicle transmission 
-
-- `Doors`: Number of doors on the vehicle
-
-- `Seats`: Number of seats in the vehicle 
-
-- `Emission Class`: Emission Class of the Vehicle 
-
-- `Service history`: Service history at time of sale price being logged 
-
-## Data Dictionary After Feature Selection 
-
-### Numeric Features 
-
-- Previous Owners
-- Engine
-- Doors
-- Seats
-- Has_Service_History
-- Mileage_per_Year
-- Log_Mileage
-- Mileage_Delta
-- Owners_per_Year
-- Is_Family_Car
-- Premium_Age
-
-### Fuel Type (One-Hot Encoded)
- 
-- Fuel type_Petrol
-- Fuel type_Petrol Hybrid
-- Fuel type_Petrol Plug-in Hybrid
-
-### Body Type (One Hot Encoded)
-
- - Convertible, Coupe, Estate, Hatchback, MPV, Pickup, SUV, Saloon
-
- ### Gearbox (One Hot Encoded)
-
- - Manual (dropped automatic)
-
- ### Emission Class (One Hot Encoded)
-
-- Emission Class_Euro 2 - 6 (dropped 1)
-
-### Binned Engine Sizes (One Hot Encoded)
-
-- Engine_Bin_Small (≤1.4L)
-- Engine_Bin_Medium (1.4–2.0L) (dropped large)
-- Engine_Bin_Performance (3.0L+) 
-
-### Age Bands 
-
-- Age_Band_3-6 (dropped 0-3)
-- Age_Band_6-10
-- Age_Band_10+
-
-### Brands (One-Hot Encoded)
-
-Alfa, Audi, BMW, Chevrolet, Chrysler, Citroen, Dacia, Daihatsu, Dodge, DS, Fiat, Ford, Honda, Hyundai, Infiniti, Jaguar, Jeep, Kia, Land Rover, Lexus, Maserati, Mazda, Mercedes, MG, Mini, Mitsubishi, Nissan, Peugeot, Porsche, Proton, Renault, Rover, Saab, Seat, Skoda, Smart, Ssangyong, Subaru, Suzuki, Toyota, Vauxhall, Volkswagen, Volvo
-
-### Models (One-Hot Encoded)
-
-A-class, ASX, Accent, Accord, Adam, Agila, Almera, Almera Tino, Alpina, Alto, Amica, Antara, Astra, Astra GTC, Auris, Automobiles DS, Avensis, Aygo, B Class, B-class, B-max, Beetle, Berlingo, Bora, C Class, C-class, C-max, CC, CL, CLA Class, CLK, CLS, CT, Caddy Maxi Life, Captiva, Captur, Cayenne, Ceed, Ceed Diesel Hatchback, Cherokee, Civic, Clio, Clubman, Colt, Compass, Convertible, Corolla, Corolla Verso, Corsa, Corsa Hatchback, Corsa Hatchback Special EDS, Coupe, Cr-v, Crossland, Crossland X, Crossland X Hatchback, Cruze, Doblo, Duster Estate, E Class, E Class Diesel Coupe, EOS, Ecosport, Ecosport Hatchback, FX, Fabia, Fabia Diesel Estate, Fiat, Fiesta, Fiesta Hatchback, Focus, Focus Active, Focus C-max, Focus CC, Focus Diesel Hatchback, Focus Hatchback, Forester, Forfour, Fortwo, Fr-v, Fullback, Fusion, G, GLE Class, GS, Galaxy, Getz, Ghibli, Golf, Golf Diesel Hatchback, Golf Hatchback, Golf Plus, Grand, Grand C-max, Grand Cherokee, Grand Espace, Grand Scenic, Grand Vitara, Grand Voyager, Grande Punto, Grandland X, Granturismo, Hatch, Hatch Cooper, Hatch ONE, Hatchback, IQ, IS, Ibiza, Ignis, Impreza, Insignia, Insignia Grand Sport, Insignia Sports Tourer, Ioniq, Jazz, Jazz Hatchback, Jetta, Jetta Diesel Saloon, Jimny, Juke, KA, KA+, Kamiq, Kangoo, Karoq Estate, Koleos, Kona, Korando, Kuga, Kuga Diesel Hatchback, LS, Laguna, Lancer, Legend, Leon, Liana, Logan MCV, Lupo, M, M Class, MAZDA, Megane, Megane Hatch, Meriva, Micra, Modus, Mokka, Mokka X, Mondeo, Multipla, Murano, Mustang, Navara Diesel Pick UP, Nitro, Note, Octavia, Optima, Outback, Outlander, PT Cruiser, Panda, Partner Tepee, Passat, Passat Petrol/electric Saloon, Pathfinder, Patriot, Phaeton, Picanto, Polo, Polo Hatchback, Prelude, Prius, Proceed, Proton, Punto, Punto EVO, Qashqai, Qashqai Diesel Hatchback, Qashqai Hatchback, RCZ, RIO, Rapid, Rapid Spaceback, Renegade, Romeo, Romeo GT, Romeo Giulietta, Romeo Mito, Roomster, Rover Discovery, Rover Discovery Sport, Rover Freelander, Rover Range Rover, Rover Range Rover Evoque, Rover Range Rover Sport, S Class, S-max, S-type, SC, SL Class, SLK, Sandero, Sandero Stepway, Santa FE, Savvy, Scenic, Scirocco, Scirocco Diesel Coupe, Sebring, Sharan, Shogun, Shogun Sport, Sorento, Soul, Spark, Sportage, Sportage Diesel Estate, Sportage Estate, Stilo, Streetka, Superb, Swift, Swift Hatchback, T-cross, TF, TT, Tarraco, Terios, Tigra, Tiguan, Toledo, Touran, Tucson, Twingo, UP, UP!, Vectra, Veloster, Venga, Verso, Vitara, Viva Hatchback, Vivaro, X-trail, X-trail Diesel Estate, X-type, XE, XF, XJ, XM, XV, Xceed Hatchback, Xsara Picasso, Yaris, Yeti, Ypsilon, ZR, Zafira, Zafira Tourer
-
-### Usage & Door Categories
-
-- Usage_Level_Low
-- Usage_Level_Normal
-- Usage_Level_Very High
-
-- Door_Category_Family 
-- Door_Category_Sedan
-- Door_Category_Small
 
 # Methodology 
 
@@ -310,30 +141,112 @@ Additional features included; engine per seat ratio,service history age relation
 
 ## Preprocessing 
 
-In preparation we first split our target variable from our other features. We then removed any features we added for analysis that were indicative of price;
-- `Price_per_Seat`
+In preparation we first split our target variable from our other features. We then removed any features we added for analysis that were indicative of price. 
 
-- `Price_per_Year_Age`
+To ensure our model was interpretable after exploring multiple features in our logistic regression we kept key features that company can observe;
 
-- `Brand_Avg_Price`
+**Numeric / continuous**
 
-- `Model_Avg_Price`
+    'Car_Age',
+    'Mileage_per_Year',
+    'Engine',
+    'Brand_Strength',       
+    'Remaining_Life',      
+    
+    
+    
+**Categorical**
 
-We one hot encoded all categorical features; 'Fuel type','Body type', 'Gearbox','Emission Class','Engine_Bin', 'Age_Band','Brand','Model','Usage_Level', and 'Door_Category'.
+    'Fuel type',
+    'Body type',
+    'Gearbox',
+    'Emission Class',
+    'Brand',
+    'Lifecycle_Stage',
+    'Depreciation_Phase',
+    
+**Target**
 
-We then created our test/train split ready for modelling.
-
-## Logistic Regression 
-
-Address Later 
+    'Log_Price'
 
 ## Random Forest Regression 
 
-## Model Evaluation 
+We used a pipeline to transform test data and explored parameters. Our testing concluded;
+
+Fitting 5 folds for each of 50 candidates, totalling 250 fits
+
+**Best params:** 
+**'regressor__n_estimators':** 800, **regressor__min_samples_split:** 2, 
+**regressor__min_samples_leaf:** 1 
+**regressor__max_features': 0.7,** 
+**regressor__max_depth:** 20}
+**Train R²:** 0.9853116675342399
+**Test R²:** 0.8739340341865218
+**RMSE (£):** 1340.0137857252557
+**MAE (£):** 770.2602978678395
+**R²:** 0.9156614907016334
+
+
+# Model Evaluation 
+
+## Residual Analysis
+
+**Log-space residuals:** The residuals are fairly evenly scattered around zero with no obvious trend, indicating that the model fits the log-transformed target reasonably well. Most predictions are close to the true log-values, and there are no extreme systematic biases.
+
+**Actual-price residuals:** The residuals in dollars show more spread, especially for higher-priced cars. This is expected because the model was trained on log-transformed prices — errors in log-space translate to larger dollar errors for more expensive cars. Some outliers exist, likely representing high-priced vehicles where the model underestimates or overestimates slightly.
+
+**Interpretation:**
+Overall, the model is capturing the main patterns of car pricing well.
+Large deviations for expensive cars are a known effect of log-transforming targets, and could be reduced with more data for high-priced cars or specialized models.
+
+## Predictive Accuracy
+
+The combination of SHAP plots and residuals suggests good predictive performance:
+
+- Most predictions lie close to the 45° line in actual vs predicted plots.
+- No strong heteroscedasticity is visible in log-space, which validates the choice of log transformation.
+
+## Feature Insights (SHAP Analysis)
+
+### SHAP Summary Plot (impact on output)
+
+Top positive/negative drivers of price:
+Car_Age: The most important feature; newer cars (low age) push predicted prices higher, older cars lower.
+Lifecycle Stage: Late-stage cars (Lifecycle_Stage_Late_True/False) significantly affect price — newer lifecycle stages increase value, later stages decrease it.
+Mileage_per_Year: Higher mileage reduces price; lower mileage increases price.
+Brand_Strength: Stronger brands positively influence car value.
+Engine: Larger engine size slightly increases price.
+
+### SHAP Feature Importance (bar plot)
+
+**Confirms the ranking of features:**
+
+- Car_Age — dominates impact on price.
+- Lifecycle Stage — early vs late stage has strong effect.
+- Mileage_per_Year — a key negative driver.
+- Brand_Strength — differentiates premium from standard cars.
+- Engine and other categorical features — moderate impact.
+
+**Interpretation:**
+
+- The model aligns with real-world expectations: newer cars with strong brands, lower mileage, and better lifecycle stage command higher prices.
+- Categorical features like gearbox type and emission class have minor effects but still contribute to predictions.
 
 ## Conclusion
 
+**Performance:**
 
+- Model fits log-prices well, translating into reasonable predictions in actual prices.
+- Residuals show good randomness around zero, suggesting no major systematic bias.
+
+**Drivers of car price:**
+
+- Age, lifecycle stage, mileage, and brand strength are the strongest determinants.
+- Engine size and gearbox type have secondary influence.
+
+**Potential Improvements:**
+- For expensive cars, consider additional features or specialized models to reduce large residuals.
+Explore interaction terms (e.g., Age × Mileage) for subtle patterns.
 
 
 
