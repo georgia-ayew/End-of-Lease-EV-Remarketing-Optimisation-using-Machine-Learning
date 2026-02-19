@@ -64,7 +64,7 @@ This allows Fleet Managers to better understand whether assets are stable or req
 
 **Depreciation Phase (30%):** Scaled value of your Depreciation_Phase feature. Higher values = steeper loss curves.
 
-**Liquidity Factor (20%):** If Gearbox_Manual = 1, add 8 pts (Harder to sell). If Body_type_SUV = 1, subtract 3 pts (High demand).
+**Liquidity Factor (20%):** If Gearbox_Manual = 1, assign 8 pts (harder to sell). If Body_type_SUV = 1, deduct 3 pts (high demand).
 
 **Usage Bias (10%):** If Mileage_per_Year is >20% above the fleet average, assign 10 pts.
 
