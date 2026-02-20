@@ -46,7 +46,9 @@ SHAP analysis reveals that features like Gearbox_Manual or certain body types (e
 
 ## Remarketing Risk Score Formula 
 
-**RiskScore=0.4(Lifecycle)+0.3(DepreciationPhase)+0.2(LiquidityFactor)+0.1(UsageBias)**
+**RiskScore = w₁(Lifecycle) + w₂(Depreciation) + w₃(Liquidity) + w₄(Usage)**
+
+Model specification proprietary. Full methodology available under collaboration.
 
 This allows Fleet Managers to better understand whether assets are stable or require remarketing to prevent loss of profit on a scale of 1-10.
 
@@ -81,15 +83,15 @@ Using supervised Random Forest Regression algorithms, are we able to establish a
 
 ## Machine Learning Task
 
-We will do a preliminary logistic regression to observe feature importance and effectiveness of our feature selection before using a pipeine to evaluate multiple random forest regression algorithms and select our most accurate model. Our learning will involve preparing our data for modelling, this being done through preprocessing, feature engineering and feature selection. This will be an iterative process based on evaluation metrics assessing how effectively our model is separating on the features we utilise.
+We will do a preliminary Logistic Regression to observe feature importance and effectiveness of our feature selection before using a pipeine to evaluate multiple random forest regression algorithms and select our most accurate model. Our learning will involve preparing our data for modelling, this being done through preprocessing, feature engineering, and feature selection. This will be an iterative process based on evaluation metrics, which assess how effectively our model is separating on the features we utilise.
 
 
 
 # The Data 
 
-The dataset contains data sourced from Autotrader UK a leading automotive marketplace website. There are 3,685 data points each representing a unique vehicle listing and distinct features.
+The dataset contains data sourced from Autotrader UK, a leading automotive marketplace website. There are 3,685 data points each representing a unique vehicle listing and distinct features.
 
-Our aim is to use analysis and modelling tools to create actionable insights on feature importance in remarketing value. Allowing remarketing companies to predict vehicle sale value and decide when best to remarket vehicles to maximise return.
+Our aim is to use analytics and modelling tools to create actionable insights on feature importance in remarketing value. This will enable remarketing companies to predict vehicle sale value and decide when best to remarket vehicles to maximise return.
 
 ## Data Dictionary
 
